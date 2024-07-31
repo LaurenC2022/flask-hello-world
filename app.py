@@ -13,65 +13,65 @@ def testing():
     conn.close()
     return 'Database Connection Successfull'
 
-# @app. route('/db_create')
-#     def creating():
-#     conn = psycopg2.connect("postgresql://hello_flask_database_user:74vGGSDNl3DGhVRLs0hn26KgxfRsXsQ2@dpg-cqlbg4d6l47c73ao847g-a/hello_flask_database")
-#     cur = conn.cursor()
-#     cur.execute('''
-#         CREATE TABLE IF NOT EXISTS Basketball (
-#         First varchar (255), 
-#         Last varchar (255) , 
-#         City varchar (255) , 
-#         Name varchar (255),
-#         Number int
-#         );
-#         ''')
-#     conn.commit ()
-#     conn.close
-#     return "Basketball Table Successfully created"
+@app. route('/db_create')
+    def creating():
+    conn = psycopg2.connect("postgresql://hello_flask_database_user:74vGGSDNl3DGhVRLs0hn26KgxfRsXsQ2@dpg-cqlbg4d6l47c73ao847g-a/hello_flask_database")
+    cur = conn.cursor()
+    cur.execute('''
+        CREATE TABLE IF NOT EXISTS Basketball (
+        First varchar (255), 
+        Last varchar (255) , 
+        City varchar (255) , 
+        Name varchar (255),
+        Number int
+        );
+        ''')
+    conn.commit ()
+    conn.close
+    return "Basketball Table Successfully created"
 
-# @app. route('/db insert')
-# def inserting():
-#     conn = psycopg2.connect("postgresql://hello_flask_database_user:74vGGSDNl3DGhVRLs0hn26KgxfRsXsQ2@dpg-cqlbg4d6l47c73ao847g-a/hello_flask_database")
-#     cur = conn.cursor()
-#     cur.execute('''
-#     INSERT INTO Basketball (First, Last, City, Name, Number)
-#     Values
-#     ('Jayson', 'Tatum', 'Boston', 'Celtics', 0), 
-#     ('Stephen', 'Curry', 'San Francisco', 'Warriors', 30)
-#     ('Nikola', 'Jokic', 'Denver', 'Nuggets', 15), 
-#     ('Kawhi', 'Leonard', 'Los Angeles', 'Clippers', 2);
-#     ''')
-#     conn.commit()
-#     conn.close()
-#     return "Basketball Table Successfully Populated"
+@app. route('/db insert')
+def inserting():
+    conn = psycopg2.connect("postgresql://hello_flask_database_user:74vGGSDNl3DGhVRLs0hn26KgxfRsXsQ2@dpg-cqlbg4d6l47c73ao847g-a/hello_flask_database")
+    cur = conn.cursor()
+    cur.execute('''
+    INSERT INTO Basketball (First, Last, City, Name, Number)
+    Values
+    ('Jayson', 'Tatum', 'Boston', 'Celtics', 0), 
+    ('Stephen', 'Curry', 'San Francisco', 'Warriors', 30)
+    ('Nikola', 'Jokic', 'Denver', 'Nuggets', 15), 
+    ('Kawhi', 'Leonard', 'Los Angeles', 'Clippers', 2);
+    ''')
+    conn.commit()
+    conn.close()
+    return "Basketball Table Successfully Populated"
 
-# @app. route('/db select')
-# def selecting):
-#     conn = psycopg2.connect("postgresql://hello_flask_database_user:74vGGSDNl3DGhVRLs0hn26KgxfRsXsQ2@dpg-cqlbg4d6l47c73ao847g-a/hello_flask_database")
-#     cur = conn.cursor()
-#     cur.execute('''
-#         SELECT * FROM Basketball;
-#         ''')
-#     records = cur.fetchall()
-#     conn.close()
-#     response_string=""
-#     response string+="<table>" 
-#     for player in records:
-#         response string+="<tr>" 
-#         for info in player:
-#             response string+="<td>{}</td>".format(info)
-#         response_string+="</try"
-#     response_string+="</table>"
-#     return response_string
+@app. route('/db select')
+def selecting):
+    conn = psycopg2.connect("postgresql://hello_flask_database_user:74vGGSDNl3DGhVRLs0hn26KgxfRsXsQ2@dpg-cqlbg4d6l47c73ao847g-a/hello_flask_database")
+    cur = conn.cursor()
+    cur.execute('''
+        SELECT * FROM Basketball;
+        ''')
+    records = cur.fetchall()
+    conn.close()
+    response_string=""
+    response string+="<table>" 
+    for player in records:
+        response string+="<tr>" 
+        for info in player:
+            response string+="<td>{}</td>".format(info)
+        response_string+="</try"
+    response_string+="</table>"
+    return response_string
 
-# @app. route('/db drop' )
-#     def dropping():
-#     conn = psycopg2.connect("postgresql://hello_flask_database_user:74vGGSDNl3DGhVRLs0hn26KgxfRsXsQ2@dpg-cqlbg4d6l47c73ao847g-a/hello_flask_database")
-#     cur = conn.cursor()
-#     cur.execute('''
-#         DROP TABLE Basketball;
-#         ''')
-#     conn.commit9()
-#     conn.close ()
-#     return "Basketball Table Successfully Dropped"
+@app. route('/db drop' )
+    def dropping():
+    conn = psycopg2.connect("postgresql://hello_flask_database_user:74vGGSDNl3DGhVRLs0hn26KgxfRsXsQ2@dpg-cqlbg4d6l47c73ao847g-a/hello_flask_database")
+    cur = conn.cursor()
+    cur.execute('''
+        DROP TABLE Basketball;
+        ''')
+    conn.commit9()
+    conn.close ()
+    return "Basketball Table Successfully Dropped"
