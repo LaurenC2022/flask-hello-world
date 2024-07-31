@@ -30,7 +30,7 @@ def creating():
     conn.close()
     return "Basketball Table Successfully created"
 
-@app. route('/db insert')
+@app. route('/dbinsert')
 def inserting():
     conn = psycopg2.connect("postgresql://hello_flask_database_user:74vGGSDNl3DGhVRLs0hn26KgxfRsXsQ2@dpg-cqlbg4d6l47c73ao847g-a/hello_flask_database")
     cur = conn.cursor()
