@@ -14,7 +14,7 @@ def testing():
     return 'Database Connection Successfull'
 
 @app. route('/db_create')
-    def creating():
+def creating():
     conn = psycopg2.connect("postgresql://hello_flask_database_user:74vGGSDNl3DGhVRLs0hn26KgxfRsXsQ2@dpg-cqlbg4d6l47c73ao847g-a/hello_flask_database")
     cur = conn.cursor()
     cur.execute('''
