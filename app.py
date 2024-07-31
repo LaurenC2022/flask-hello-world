@@ -46,24 +46,24 @@ def inserting():
     conn.close()
     return "Basketball Table Successfully Populated"
 
-# @app. route('/db select')
-# def selecting):
-#     conn = psycopg2.connect("postgresql://hello_flask_database_user:74vGGSDNl3DGhVRLs0hn26KgxfRsXsQ2@dpg-cqlbg4d6l47c73ao847g-a/hello_flask_database")
-#     cur = conn.cursor()
-#     cur.execute('''
-#         SELECT * FROM Basketball;
-#         ''')
-#     records = cur.fetchall()
-#     conn.close()
-#     response_string=""
-#     response string+="<table>" 
-#     for player in records:
-#         response string+="<tr>" 
-#         for info in player:
-#             response string+="<td>{}</td>".format(info)
-#         response_string+="</try"
-#     response_string+="</table>"
-#     return response_string
+@app. route('/db select')
+def selecting():
+    conn = psycopg2.connect("postgresql://hello_flask_database_user:74vGGSDNl3DGhVRLs0hn26KgxfRsXsQ2@dpg-cqlbg4d6l47c73ao847g-a/hello_flask_database")
+    cur = conn.cursor()
+    cur.execute('''
+        SELECT * FROM Basketball;
+        ''')
+    records = cur.fetchall()
+    conn.close()
+    response_string=""
+    response_string+="<table>" 
+    for player in records:
+        response_string+="<tr>" 
+        for info in player:
+            response_string+="<td>{}</td>".format(info)
+        response_string+="</try"
+    response_string+="</table>"
+    return response_string
 
 @app. route('/db drop')
 def dropping():
