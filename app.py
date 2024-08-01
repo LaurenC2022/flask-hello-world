@@ -1,5 +1,9 @@
 import psycopg2
 
+# GitHub Repo: https://github.com/LaurenC2022/flask-hello-world.git
+# Flask app on render: https://three308cspb-lauren-collins.onrender.com
+# An empty database (db_drop was the last route called): yes, see Repo above 
+
 from flask import Flask
 app = Flask(__name__)
 
