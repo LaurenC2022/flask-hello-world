@@ -5,6 +5,11 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
+    testing()
+    creating()
+    inserting()
+    selecting()
+    dropping()
     return 'Hello World from --your name-- in 3308'
 
 @app.route('/db_test')
